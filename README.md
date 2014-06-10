@@ -5,7 +5,7 @@ Simple swift document based app that supports multi-documents within a window co
 
 ##Download
 
-Coming Soon<br><br>
+[SwiftTabDocument.dmg (1.4Mb)](https://github.com/sjhorn/SwiftTabDocument/raw/master/SwiftTabDocument.dmg)<br><br><br><br>
 
 ![SwiftTabDocument](SwiftTabDocument.png "TabDocument")
 

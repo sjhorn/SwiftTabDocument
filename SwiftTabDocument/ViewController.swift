@@ -14,9 +14,19 @@ class ViewController: NSViewController {
         return ((self.view as NSScrollView).documentView) as NSTextView
     }
     
-    init(document: Document) {
-        super.init(nibName: "View", bundle: nil)
+    init(coder: NSCoder!) {
+        super.init(coder: coder)
+    }
+    
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    convenience init(document: Document) {
+        self.init(nibName: "View", bundle: nil)
         self.document = document
+        
+        textView.bind("value", toObject: document, withKeyPath: "fileContents", options: nil)
     }
     
     override func loadView() {

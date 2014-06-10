@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ViewController" customModule="SwiftTabDocument" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ViewController" customModule="SwiftTabDocument">
             <connections>
                 <outlet property="view" destination="dXK-jn-kND" id="Jl2-bo-mgt"/>
             </connections>
@@ -27,9 +27,6 @@
                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="minSize" width="240" height="135"/>
                         <size key="maxSize" width="463" height="10000000"/>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="self.document" id="XdD-Ob-hud"/>
-                        </connections>
                     </textView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
