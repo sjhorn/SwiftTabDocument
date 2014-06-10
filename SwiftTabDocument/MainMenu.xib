@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -10,11 +10,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="SwiftTabDocument" id="1Xt-HY-uBw">
+                <menuItem title="TabDocument" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="SwiftTabDocument" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="TabDocument" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About SwiftTabDocument" id="5kV-Vb-QxS">
+                            <menuItem title="About TabDocument" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -28,7 +28,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide SwiftTabDocument" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide TabDocument" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -46,7 +46,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit SwiftTabDocument" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit TabDocument" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -81,12 +81,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                             <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                 <connections>
-                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
+                                    <action selector="closeDocument:" target="-1" id="cC6-7p-eoE"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
+                            <menuItem title="New Window" keyEquivalent="N" id="fdz-Xg-bFH">
+                                <connections>
+                                    <action selector="newWindow:" target="-1" id="DLC-xK-aLe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Close Window" keyEquivalent="W" id="BLZ-Bl-kmn">
+                                <connections>
+                                    <action selector="closeWindow:" target="-1" id="XmX-iP-uum"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="IUp-1t-Bzq"/>
                             <menuItem title="Save…" keyEquivalent="s" id="pxx-59-PXV">
                                 <connections>
                                     <action selector="saveDocument:" target="-1" id="teZ-XB-qJY"/>
@@ -319,14 +330,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Speech" id="3rS-ZA-NoH">
                                     <items>
-                                        <menuItem title="Start Speaking" id="Ynk-f8-cLZ">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Start Speaking" keyEquivalent="]" id="Ynk-f8-cLZ">
                                             <connections>
                                                 <action selector="startSpeaking:" target="-1" id="654-Ng-kyl"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Stop Speaking" id="Oyz-dy-DGm">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Stop Speaking" keyEquivalent="\" id="Oyz-dy-DGm">
                                             <connections>
                                                 <action selector="stopSpeaking:" target="-1" id="dX8-6p-jy9"/>
                                             </connections>
@@ -634,6 +643,19 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                            <menuItem title="Show Prev Tab" keyEquivalent="" id="8xq-gw-s7n">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="showPrevTab:" target="-1" id="QwJ-6Q-Z1Z"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show Next Tab" keyEquivalent="" id="za7-F3-xNo">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="showNextTab:" target="-1" id="C7c-X6-A0M"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="40X-3C-vtn"/>
                             <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -647,7 +669,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="SwiftTabDocument Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="TabDocument Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
@@ -657,5 +679,6 @@
                 </menuItem>
             </items>
         </menu>
+        <customObject id="4Ag-fI-SNb" customClass="DocumentController" customModule="SwiftTabDocument" customModuleProvider="target"/>
     </objects>
 </document>

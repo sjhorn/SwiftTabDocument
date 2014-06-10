@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		92203200193F0BF000AC6E61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922031FF193F0BF000AC6E61 /* main.swift */; };
 		92203202193F0BF000AC6E61 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92203201193F0BF000AC6E61 /* Document.swift */; };
-		92203205193F0BF000AC6E61 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92203203193F0BF000AC6E61 /* Document.xib */; };
 		92203207193F0BF000AC6E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92203206193F0BF000AC6E61 /* Images.xcassets */; };
-		9220320A193F0BF000AC6E61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92203208193F0BF000AC6E61 /* MainMenu.xib */; };
 		92203216193F0BF100AC6E61 /* SwiftTabDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92203215193F0BF100AC6E61 /* SwiftTabDocumentTests.swift */; };
+		9220334A193F0D2400AC6E61 /* MMTabBarView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92203349193F0CDB00AC6E61 /* MMTabBarView.framework */; };
+		9220334E193F0D5E00AC6E61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9220334B193F0D5E00AC6E61 /* MainMenu.xib */; };
+		9220334F193F0D5E00AC6E61 /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9220334C193F0D5E00AC6E61 /* Window.xib */; };
+		92203350193F0D5E00AC6E61 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9220334D193F0D5E00AC6E61 /* View.xib */; };
+		92203352193F0D9D00AC6E61 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92203351193F0D9D00AC6E61 /* DocumentController.swift */; };
+		92203354193F28F200AC6E61 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92203353193F28F200AC6E61 /* WindowController.swift */; };
+		92203362194471CE00AC6E61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92203361194471CE00AC6E61 /* ViewController.swift */; };
+		922033651945250200AC6E61 /* HMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 922033641945250200AC6E61 /* HMUtils.m */; };
+		9220336919470B4A00AC6E61 /* MMTabBarView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92203349193F0CDB00AC6E61 /* MMTabBarView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +30,47 @@
 			remoteGlobalIDString = 922031F9193F0BF000AC6E61;
 			remoteInfo = SwiftTabDocument;
 		};
+		92203348193F0CDB00AC6E61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 922032C9193F0CDB00AC6E61 /* MMTabBarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06DB23A61609F5830071BDA0;
+			remoteInfo = MMTabBarView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9220336819470B3900AC6E61 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9220336919470B4A00AC6E61 /* MMTabBarView.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		922031FA193F0BF000AC6E61 /* SwiftTabDocument.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTabDocument.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922031FE193F0BF000AC6E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		922031FF193F0BF000AC6E61 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		92203201193F0BF000AC6E61 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		92203204193F0BF000AC6E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
 		92203206193F0BF000AC6E61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92203209193F0BF000AC6E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9220320F193F0BF100AC6E61 /* SwiftTabDocumentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTabDocumentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92203214193F0BF100AC6E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92203215193F0BF100AC6E61 /* SwiftTabDocumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTabDocumentTests.swift; sourceTree = "<group>"; };
+		922032C9193F0CDB00AC6E61 /* MMTabBarView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MMTabBarView.xcodeproj; sourceTree = "<group>"; };
+		9220334B193F0D5E00AC6E61 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		9220334C193F0D5E00AC6E61 /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = "<group>"; };
+		9220334D193F0D5E00AC6E61 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		92203351193F0D9D00AC6E61 /* DocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
+		92203353193F28F200AC6E61 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		9220335D194470E400AC6E61 /* SwiftTabDocument-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTabDocument-Bridging-Header.h"; sourceTree = "<group>"; };
+		92203361194471CE00AC6E61 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		922033631945250200AC6E61 /* HMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMUtils.h; sourceTree = "<group>"; };
+		922033641945250200AC6E61 /* HMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9220334A193F0D2400AC6E61 /* MMTabBarView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +98,7 @@
 				922031FC193F0BF000AC6E61 /* SwiftTabDocument */,
 				92203212193F0BF100AC6E61 /* SwiftTabDocumentTests */,
 				922031FB193F0BF000AC6E61 /* Products */,
+				922032C9193F0CDB00AC6E61 /* MMTabBarView.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +114,16 @@
 		922031FC193F0BF000AC6E61 /* SwiftTabDocument */ = {
 			isa = PBXGroup;
 			children = (
+				92203351193F0D9D00AC6E61 /* DocumentController.swift */,
 				92203201193F0BF000AC6E61 /* Document.swift */,
-				92203203193F0BF000AC6E61 /* Document.xib */,
+				92203353193F28F200AC6E61 /* WindowController.swift */,
+				92203361194471CE00AC6E61 /* ViewController.swift */,
 				92203206193F0BF000AC6E61 /* Images.xcassets */,
-				92203208193F0BF000AC6E61 /* MainMenu.xib */,
+				9220334B193F0D5E00AC6E61 /* MainMenu.xib */,
+				9220334C193F0D5E00AC6E61 /* Window.xib */,
+				9220334D193F0D5E00AC6E61 /* View.xib */,
 				922031FD193F0BF000AC6E61 /* Supporting Files */,
+				92203366194526E500AC6E61 /* Bridge */,
 			);
 			path = SwiftTabDocument;
 			sourceTree = "<group>";
@@ -112,6 +154,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		922032CA193F0CDB00AC6E61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92203349193F0CDB00AC6E61 /* MMTabBarView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92203366194526E500AC6E61 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				9220335D194470E400AC6E61 /* SwiftTabDocument-Bridging-Header.h */,
+				922033631945250200AC6E61 /* HMUtils.h */,
+				922033641945250200AC6E61 /* HMUtils.m */,
+			);
+			name = Bridge;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +182,7 @@
 				922031F6193F0BF000AC6E61 /* Sources */,
 				922031F7193F0BF000AC6E61 /* Frameworks */,
 				922031F8193F0BF000AC6E61 /* Resources */,
+				9220336819470B3900AC6E61 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -161,6 +222,7 @@
 				TargetAttributes = {
 					922031F9193F0BF000AC6E61 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = BHBXYS3HXS;
 					};
 					9220320E193F0BF100AC6E61 = {
 						CreatedOnToolsVersion = 6.0;
@@ -179,6 +241,12 @@
 			mainGroup = 922031F1193F0BF000AC6E61;
 			productRefGroup = 922031FB193F0BF000AC6E61 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 922032CA193F0CDB00AC6E61 /* Products */;
+					ProjectRef = 922032C9193F0CDB00AC6E61 /* MMTabBarView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				922031F9193F0BF000AC6E61 /* SwiftTabDocument */,
@@ -187,14 +255,25 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		92203349193F0CDB00AC6E61 /* MMTabBarView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MMTabBarView.framework;
+			remoteRef = 92203348193F0CDB00AC6E61 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		922031F8193F0BF000AC6E61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92203205193F0BF000AC6E61 /* Document.xib in Resources */,
+				9220334E193F0D5E00AC6E61 /* MainMenu.xib in Resources */,
 				92203207193F0BF000AC6E61 /* Images.xcassets in Resources */,
-				9220320A193F0BF000AC6E61 /* MainMenu.xib in Resources */,
+				9220334F193F0D5E00AC6E61 /* Window.xib in Resources */,
+				92203350193F0D5E00AC6E61 /* View.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922033651945250200AC6E61 /* HMUtils.m in Sources */,
+				92203362194471CE00AC6E61 /* ViewController.swift in Sources */,
 				92203202193F0BF000AC6E61 /* Document.swift in Sources */,
+				92203354193F28F200AC6E61 /* WindowController.swift in Sources */,
 				92203200193F0BF000AC6E61 /* main.swift in Sources */,
+				92203352193F0D9D00AC6E61 /* DocumentController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,25 +317,6 @@
 			targetProxy = 92203210193F0BF100AC6E61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		92203203193F0BF000AC6E61 /* Document.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92203204193F0BF000AC6E61 /* Base */,
-			);
-			name = Document.xib;
-			sourceTree = "<group>";
-		};
-		92203208193F0BF000AC6E61 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92203209193F0BF000AC6E61 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		92203217193F0BF100AC6E61 /* Debug */ = {
@@ -336,10 +400,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Scott Horn";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftTabDocument/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTabDocument/SwiftTabDocument-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -347,10 +415,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Scott Horn";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftTabDocument/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTabDocument/SwiftTabDocument-Bridging-Header.h";
 			};
 			name = Release;
 		};
