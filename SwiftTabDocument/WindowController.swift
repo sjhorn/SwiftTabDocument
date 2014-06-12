@@ -60,7 +60,7 @@ class WindowController: NSWindowController, NSWindowDelegate, MMTabBarViewDelega
     func tabView(aTabView: NSTabView!, shouldCloseTabViewItem tabViewItem: NSTabViewItem!) -> (Bool) {
         let doc: Document = tabViewItem.identifier as Document
         doc.canCloseDocumentWithDelegate(self,
-            shouldCloseSelector: Selector("document:shouldClose:contextInfo:"),
+            shouldCloseSelector: "document:shouldClose:contextInfo:",
             contextInfo: &HMWindowControllerCloseTab)
         return false
     }
@@ -75,9 +75,9 @@ class WindowController: NSWindowController, NSWindowDelegate, MMTabBarViewDelega
     
     override func validateMenuItem(menuItem: NSMenuItem!) -> Bool {
         switch menuItem.action {
-        case Selector("closeDocument:"):
+        case "closeDocument:":
             return tabBar?.selectedTabViewItem() != nil
-        case Selector("showNextTab:"), Selector("showPrevTab:"):
+        case "showNextTab:", "showPrevTab:":
             return tabView?.numberOfTabViewItems > 1
         default:
             return true
@@ -92,7 +92,7 @@ class WindowController: NSWindowController, NSWindowDelegate, MMTabBarViewDelega
     }
     
     func addNewTabToTabView(aTabView: NSTabView) {
-        NSApp.sendAction(Selector("newDocument:"), to: nil, from: self)
+        NSApp.sendAction("newDocument:", to: nil, from: self)
     }
     
     func closeAllTabsWithFunc(finishedClosingFunc: (Bool) -> () ) {
@@ -101,7 +101,7 @@ class WindowController: NSWindowController, NSWindowDelegate, MMTabBarViewDelega
         } else {
             self.finishedClosingFunc = finishedClosingFunc
             (documents[0] as Document).canCloseDocumentWithDelegate(self,
-                shouldCloseSelector: Selector("document:shouldClose:contextInfo:"),
+                shouldCloseSelector: "document:shouldClose:contextInfo:",
                 contextInfo: &HMWindowControllerCloseAllTabs)
         }
     }
@@ -127,7 +127,7 @@ class WindowController: NSWindowController, NSWindowDelegate, MMTabBarViewDelega
             if contextInfo == &HMWindowControllerCloseAllTabs {
                 if documents.count > 0 {
                     documents[0].canCloseDocumentWithDelegate(self,
-                        shouldCloseSelector: Selector("document:shouldClose:contextInfo:"),
+                        shouldCloseSelector: "document:shouldClose:contextInfo:",
                         contextInfo: &HMWindowControllerCloseAllTabs)
                 } else {
                     finishedClosingFunc(true)

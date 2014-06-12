@@ -483,6 +483,7 @@
 				9220321B193F0BF100AC6E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9220321C193F0BF100AC6E61 /* Build configuration list for PBXNativeTarget "SwiftTabDocumentTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +492,7 @@
 				9220321E193F0BF100AC6E61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

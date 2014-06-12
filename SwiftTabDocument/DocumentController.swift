@@ -22,7 +22,7 @@ class DocumentController : NSDocumentController {
         super.init()
         NSNotificationCenter
             .defaultCenter()
-            .addObserver(self, selector: Selector("handleDocumentNeedWindowNotification:"),
+            .addObserver(self, selector: "handleDocumentNeedWindowNotification:",
                 name: HMDocumentNeedWindowNotification, object: nil)
     }
     
@@ -61,7 +61,7 @@ class DocumentController : NSDocumentController {
         }
         let mainWindowController : WindowController = newWindowController()
         mainWindowController.window.makeKeyAndOrderFront(nil)
-        NSApp.sendAction(Selector("newDocument:"), to:nil, from:self)
+        NSApp.sendAction("newDocument:", to:nil, from:self)
     }
     
     func document(doc: NSDocument, shouldClose: Bool, contextInfo: CMutableVoidPointer) {
@@ -74,7 +74,7 @@ class DocumentController : NSDocumentController {
                 }
                 if nextDoc != nil {
                     nextDoc?.canCloseDocumentWithDelegate(self,
-                        shouldCloseSelector: Selector("document:shouldClose:contextInfo:"),
+                        shouldCloseSelector: "document:shouldClose:contextInfo:",
                         contextInfo: &HMDocumentCloseAllWindows)
                 } else {
                     closeAllCompletedBlock(self, true)
@@ -95,7 +95,7 @@ class DocumentController : NSDocumentController {
         closedDocumentIndex = 0
         if documents.count > 0 {
             (documents[0] as NSDocument).canCloseDocumentWithDelegate(self,
-                shouldCloseSelector: Selector("document:shouldClose:contextInfo:"),
+                shouldCloseSelector: "document:shouldClose:contextInfo:",
                 contextInfo: &HMDocumentCloseAllWindows)
         }
     }
