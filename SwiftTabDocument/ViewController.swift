@@ -9,17 +9,17 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    let document : Document?
+    var document : Document?
     var textView : NSTextView {
-        return ((self.view as NSScrollView).documentView) as NSTextView
+        return ((self.view as! NSScrollView).documentView) as! NSTextView
     }
     
-    init(coder: NSCoder!) {
-        super.init(coder: coder)
+    required init(coder: NSCoder) {
+        super.init(coder: coder)!
     }
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)!
     }
     
     convenience init(document: Document) {

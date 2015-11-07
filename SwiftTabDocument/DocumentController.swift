@@ -12,18 +12,22 @@ let HMDocumentNeedWindowNotification = "DocumentNeedWindowNotification"
 var HMDocumentCloseAllWindows = "HMDocumentCloseAllWindows"
 
 class DocumentController : NSDocumentController {
-    var windowControllers =  NSWindowController[]()
+    var windowControllers =  [NSWindowController]()
     var topLeftPoint : NSPoint = NSPoint(x:0, y:0)
     
     var closedDocumentIndex : Int = 0
     var closeAllCompletedBlock : (AnyObject, Bool) -> () = { o, b in return }
     
-    init() {
+    override init() {
         super.init()
         NSNotificationCenter
             .defaultCenter()
             .addObserver(self, selector: "handleDocumentNeedWindowNotification:",
                 name: HMDocumentNeedWindowNotification, object: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
@@ -31,40 +35,40 @@ class DocumentController : NSDocumentController {
     }
     
     func handleDocumentNeedWindowNotification(notification : NSNotification) {
-        self.mainWindowController().addDocument(notification.object as Document)
+        self.mainWindowController().addDocument(notification.object as! Document)
     }
     
     func mainWindowController() -> WindowController {
-        var mainWindow : NSWindow? = NSApp?.mainWindow as? NSWindow
+        let mainWindow : NSWindow? = NSApp?.mainWindow
         if mainWindow == nil {
             return newWindowController()
         } else {
-            return mainWindow?.windowController() as WindowController
+            return mainWindow?.windowController as! WindowController
         }
     }
     
     func newWindowController() -> WindowController {
         let windowController : WindowController = WindowController(windowNibName:"Window")
         windowController.showWindow(self)
-        topLeftPoint = windowController.window.cascadeTopLeftFromPoint(topLeftPoint)
+        topLeftPoint = windowController.window!.cascadeTopLeftFromPoint(topLeftPoint)
         windowControllers.append(windowController)
         return windowController
     }
     
     @IBAction func newWindow(sender : AnyObject) {
-        let windowController : WindowController? = NSApp.mainWindow?.windowController() as? WindowController
+        let windowController : WindowController? = NSApp.mainWindow?.windowController as? WindowController
         if windowController != nil {
             let window : NSWindow? = windowController?.window
-            if !window?.makeFirstResponder(window) {
+            if ((window?.makeFirstResponder(window)) == nil) {
                 return // return if we cant finish editing
             }
         }
         let mainWindowController : WindowController = newWindowController()
-        mainWindowController.window.makeKeyAndOrderFront(nil)
+        mainWindowController.window!.makeKeyAndOrderFront(nil)
         NSApp.sendAction("newDocument:", to:nil, from:self)
     }
     
-    func document(doc: NSDocument, shouldClose: Bool, contextInfo: CMutableVoidPointer) {
+    func document(doc: NSDocument, shouldClose: Bool, contextInfo: UnsafeMutablePointer<Void>) {
         if contextInfo == &HMDocumentCloseAllWindows {
             if shouldClose {
                 closedDocumentIndex += 1
@@ -85,9 +89,9 @@ class DocumentController : NSDocumentController {
             }
         }
     }
-    
-    override func closeAllDocumentsWithDelegate(delegate: AnyObject!, didCloseAllSelector: Selector,
-        contextInfo: CMutableVoidPointer) {
+
+
+    override func closeAllDocumentsWithDelegate(delegate: AnyObject?, didCloseAllSelector: Selector, contextInfo: UnsafeMutablePointer<Void>) {
         closeAllCompletedBlock = {
             (me : AnyObject, didCloseAll : Bool) -> () in
             HMUtils.delegate(delegate, _something: me, didSomething: didCloseAll, soContinue: contextInfo)

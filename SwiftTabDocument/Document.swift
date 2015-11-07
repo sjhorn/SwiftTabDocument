@@ -21,15 +21,19 @@ class Document: NSDocument, MMTabBarItem {
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: HMDocumentNeedWindowNotification, object: self))
     }    
 
-    override func dataOfType(typeName: String?, error outError: NSErrorPointer) -> NSData? {
+    override func dataOfType(typeName: String?) throws -> NSData {
+        let outError: NSError! = NSError(domain: "Migrator", code: 0, userInfo: nil)
+        if let value = fileContents.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+            //outError.memory = NSError.errorWithDomain(NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+            return value
+        }
         //outError.memory = NSError.errorWithDomain(NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return fileContents.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        throw outError
     }
 
-    override func readFromData(data: NSData?, ofType typeName: String?, error outError: NSErrorPointer) -> Bool {
+    override func readFromData(data: NSData?, ofType typeName: String?) throws {
         //outError.memory = NSError.errorWithDomain(NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        fileContents = NSString(data: data, encoding: NSUTF8StringEncoding) as String
-        return true
+        fileContents = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
     }
 
 
